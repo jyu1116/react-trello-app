@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
 import { RecoilRoot } from "recoil";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import { darkTheme } from "./styled";
+import { darkTheme } from "./styled.d";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
