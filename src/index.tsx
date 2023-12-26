@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import { RecoilRoot } from "recoil";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import { darkTheme } from "./styled.d";
+import { darkTheme } from "./theme";
+import App from "./App";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -58,15 +58,31 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+* {
+  box-sizing: border-box;
+}
+body {
+  font-weight: 300;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color:${(props) => props.theme.bgColor};
+  color:black;
+  line-height: 1.2;
+}
+a {
+  text-decoration:none;
+  color:inherit;
+}
 `;
 
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <div>
     <RecoilRoot>
       <ThemeProvider theme={darkTheme}>
         <GlobalStyle />
         <App />
       </ThemeProvider>
     </RecoilRoot>
-  </React.StrictMode>
+  </div>
+  // </React.StrictMode>
 );
